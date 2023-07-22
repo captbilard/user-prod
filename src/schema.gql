@@ -1,0 +1,39 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Product {
+  id: String!
+  name: String!
+  price: Float!
+  user: User!
+}
+
+type User {
+  id: String!
+  name: String!
+  email: String!
+  age: Float!
+  orders: [Product!]
+}
+
+type Query {
+  Get_All_Users: [User!]!
+  Find_One_User(id: String!): User!
+}
+
+type Mutation {
+  Create_User(createUserInput: CreateUserDto!): User!
+  createProduct(userId: String!, createProductInput: CreateProductDto!): Product!
+}
+
+input CreateUserDto {
+  name: String!
+  email: String!
+  age: Int!
+}
+
+input CreateProductDto {
+  name: String!
+  price: Float!
+}
